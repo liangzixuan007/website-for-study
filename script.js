@@ -1,32 +1,7 @@
-// 选择具有 'refresh' 类名的 h1 元素
-const refreshHeader = document.querySelector('.refresh');
-
-
-
-function handleClick(event) {
-    alert('Refresh button clicked!');
-
-    var diceNumber1 = Math.floor(Math.random()*6) + 1;
-
-    var imgRandomizer = "dice" + diceNumber1 + ".png";
-
-    var final = "./images/" + imgRandomizer;
-
-    var image1 = document.querySelectorAll("img")[0];
-
-    image1.setAttribute("src", final);
-
-    var diceNumber2 = Math.floor(Math.random()*6) + 1;
-
-    var imgRandomizerPlus = "dice" + diceNumber2 + ".png";
-
-    var finalPlus = "./images/" + imgRandomizerPlus;
-
-    var image2 = document.querySelectorAll("img")[1];
-
-    image2.setAttribute("src", finalPlus);
-
-}
-
-
-refreshHeader.addEventListener('click', handleClick);
+$(document).keypress(function(event){
+    $("h1").text(event.key);
+    $("h2").fadeOut();
+    $("h2").fadeIn();
+});
+$("h1").before("<button>buttonBeforeH1<button>");
+$("h1").after("<button>buttonAfterH1<button>");
